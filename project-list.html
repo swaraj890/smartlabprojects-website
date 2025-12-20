@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Projects by Domain</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; margin: 0; }
+    .container { max-width: 1200px; margin: 0 auto; background: #fff; border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); padding: 32px; }
+    .header { background: linear-gradient(135deg, #6e48aa, #9d50bb); color: #fff; padding: 24px 0 16px 0; border-radius: 10px 10px 0 0; margin-bottom: 32px; }
+    .header h1 { margin: 0; font-size: 2.2rem; }
+    .projects-list-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
+    .project-card { background: #fff; border-radius: 10px; box-shadow: 0 4px 16px rgba(110,72,170,0.07); overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.2s,transform 0.2s; cursor: pointer; }
+    .project-card:hover { box-shadow: 0 8px 32px rgba(110,72,170,0.13); transform: translateY(-4px) scale(1.03); }
+    .project-image { height: 160px; background: #f5f5f5; overflow: hidden; }
+    .project-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .project-content { padding: 16px 14px 12px 14px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .project-content h3 { font-size: 1.08rem; color: #333; margin-bottom: 7px; }
+    .project-content p { font-size: 0.95rem; color: #666; margin-bottom: 8px; min-height: 36px; }
+    .project-price { color: #6e48aa; font-weight: 600; font-size: 1rem; }
+    .nav-btns { display: flex; justify-content: space-between; margin: 32px 0 0 0; }
+    .nav-btns button { background: #6e48aa; color: #fff; border: none; padding: 10px 24px; border-radius: 6px; font-weight: 500; cursor: pointer; transition: background 0.2s; }
+    .nav-btns button:hover { background: #9d50bb; }
+    .contact-section { margin-top: 48px; background: #f8f9fa; border-radius: 10px; padding: 32px; }
+    @media (max-width: 700px) { .container { padding: 10px; } .header { padding: 16px 0 10px 0; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 id="domainTitle">Projects</h1>
+    </div>
+    <div class="projects-list-grid" id="projectsListGrid"></div>
+    <div class="nav-btns">
+      <button id="prevDomainBtn">&laquo; Previous Domain</button>
+      <button id="backHomeBtn">Back to Home</button>
+      <button id="nextDomainBtn">Next Domain &raquo;</button>
+    </div>
+    <div class="contact-section" id="contactSection"></div>
+  </div>
+  <script type="module">
+    import { projects } from './projects.js';
+    import { contactDetails } from './contact.js';
+    const params = new URLSearchParams(window.location.search);
+    const domain = params.get('domain');
+    const allDomains = Array.from(new Set(projects.map(p => p.domain)));
+    let currentDomainIdx = allDomains.indexOf(domain);
+    function renderProjectsList() {
+      document.getElementById('domainTitle').textContent = domain ? domain : 'Projects';
+      const grid = document.getElementById('projectsListGrid');
+      grid.innerHTML = '';
+      const domainProjects = projects.filter(p => p.domain === domain);
+      domainProjects.forEach((project, idx) => {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        card.innerHTML = `
+          <div class="project-image"><img src="${project.image || ''}" alt="${project.title}"></div>
+          <div class="project-content">
+            <h3>${project.title}</h3>
+            <p>${project.description ? project.description.substring(0, 70) + (project.description.length > 70 ? '...' : '') : ''}</p>
+            <div class="project-price">₹${project.difficulty ? (project.difficulty in prices ? prices[project.difficulty] : '---') : '---'}</div>
+          </div>
+        `;
+        card.onclick = () => window.location.href = `project-details.html?id=${projects.indexOf(project)}`;
+        grid.appendChild(card);
+      });
+    }
+    // Navigation
+    document.getElementById('prevDomainBtn').onclick = () => {
+      if (currentDomainIdx > 0) {
+        window.location.href = `project-list.html?domain=${encodeURIComponent(allDomains[currentDomainIdx-1])}`;
+      }
+    };
+    document.getElementById('nextDomainBtn').onclick = () => {
+      if (currentDomainIdx < allDomains.length-1) {
+        window.location.href = `project-list.html?domain=${encodeURIComponent(allDomains[currentDomainIdx+1])}`;
+      }
+    };
+    document.getElementById('backHomeBtn').onclick = () => window.location.href = 'index.html';
+    // Contact Section
+    function renderContact() {
+      const c = contactDetails;
+      document.getElementById('contactSection').innerHTML = `
+        <h2 style="color:#6e48aa;">Contact Us</h2>
+        <div style="margin-bottom:12px;"><b>Email:</b> ${c.email}</div>
+        <div style="margin-bottom:12px;"><b>Phone:</b> ${c.phones.join(' / ')}</div>
+        <div style="margin-bottom:12px;"><b>Address:</b> ${c.address}</div>
+        <div style="margin-bottom:12px;"><b>Social:</b> <a href="${c.social.linkedin}" target="_blank">LinkedIn</a> | <a href="${c.social.twitter}" target="_blank">Twitter</a> | <a href="${c.social.github}" target="_blank">GitHub</a> | <a href="${c.social.instagram}" target="_blank">Instagram</a></div>
+      `;
+    }
+    // Prices
+    let prices = {};
+    fetch('./prices.json').then(r => r.json()).then(data => { prices = data; renderProjectsList(); });
+    renderContact();
+  </script>
+</body>
+</html>
