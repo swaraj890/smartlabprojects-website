@@ -8,7 +8,7 @@ export const contactDetails = {
     whatsapp: "https://wa.me/7008490090",
     linkedin: "https://www.linkedin.com/",
     youtube: "https://www.youtube.com/",
-    email: "swaraj890806@gmail.com",
-    instagram: "https://www.instagram.com/"
+    email: "smartlab.inquiry@gmail.com",
+    instagram: "https://www.instagram.com/smartlabprojects/"
   }
 };
