@@ -1,7 +1,7 @@
 // Contact details for ProjectMates
 export const contactDetails = {
   // Public contact info (safe to keep in repo)
-  email: "swaraj890806@gmail.com",
+  email: "smartlab.inquiry@gmail.com",
   phones: ["+91 7008490090", "+91"],
   address: "India (Remote Services Worldwide)",
   social: {
