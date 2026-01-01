@@ -1,4 +1,4 @@
-# SmartLabProjects - Academic Project Solutions
+# SmartLabProjects - Academic Project Solutions (https://www.smartlabprojects.com/)
 
 🚀 **Where Creativity Meets Code**
 
@@ -111,7 +111,7 @@ See `EMAIL_SETUP_GUIDE.md` for detailed instructions.
 
 ## 🌐 Deployment
 
-This project is configured for deployment on Vercel.
+This project is configured for deployment on Vercel. (https://www.smartlabprojects.com/)
 
 ### Quick Deployment Steps:
 
