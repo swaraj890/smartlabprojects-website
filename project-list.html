@@ -4,221 +4,509 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Browse AI & Computer Science Projects | Student Project Guidance</title>
+  <title>Project Details & Guidance - SmartLabProjects | Mentorship & Help</title>
   <meta name="description"
-    content="Explore AI/ML project ideas, Web development projects, and Data science solutions. Get complete semester project help with code and documentation.">
+    content="View detailed project information, guidance, and mentorship options. Get help with your university project execution, documentation, and presentation.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    :root {
+      --primary: #6e48aa;
+      --secondary: #9d50bb;
+      --dark: #22223b
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f5f5f5;
+      background: #f6f4fb;
       margin: 0;
+      color: var(--dark)
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-      padding: 32px;
-    }
-
-    .header {
-      background: linear-gradient(135deg, #6e48aa, #9d50bb);
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: #fff;
-      padding: 24px 0 16px 0;
-      border-radius: 10px 10px 0 0;
-      margin-bottom: 32px;
-    }
-
-    .header h1 {
-      margin: 0;
-      font-size: 2.2rem;
-    }
-
-    .projects-list-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 28px;
-    }
-
-    .project-card {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 16px rgba(110, 72, 170, 0.07);
-      overflow: hidden;
       display: flex;
-      flex-direction: column;
-      transition: box-shadow 0.2s, transform 0.2s;
-      cursor: pointer;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 6px 20px rgba(16, 12, 54, 0.08)
     }
 
-    .project-card:hover {
-      box-shadow: 0 8px 32px rgba(110, 72, 170, 0.13);
-      transform: translateY(-4px) scale(1.03);
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    header .logo {
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #fff;
+      text-decoration: none
+    }
+
+    main {
+      padding-top: 92px
+    }
+
+    .page-wrap {
+      max-width: 1150px;
+      margin: 28px auto;
+      padding: 0 20px
+    }
+
+    .detail-card {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 28px;
+      margin-bottom: 28px
+    }
+
+    .panel {
+      background: #fff;
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: 0 10px 30px rgba(16, 12, 54, 0.06)
     }
 
     .project-image {
-      height: 160px;
-      background: #f5f5f5;
-      overflow: hidden;
-    }
-
-    .project-image img {
       width: 100%;
-      height: 100%;
+      height: 320px;
       object-fit: cover;
-      transition: transform 0.4s;
+      border-radius: 8px;
+      margin-bottom: 18px
     }
 
-    .project-content {
-      padding: 16px 14px 12px 14px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+    .project-title {
+      font-size: 1.8rem;
+      color: var(--dark);
+      margin: 0 0 8px
     }
 
-    .project-content h3 {
-      font-size: 1.08rem;
-      color: #333;
-      margin-bottom: 7px;
-    }
-
-    .project-content p {
-      font-size: 0.95rem;
+    .project-meta {
       color: #666;
+      margin-bottom: 14px
+    }
+
+    .project-desc {
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 18px
+    }
+
+    .form-title {
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-bottom: 12px
+    }
+
+    .form-group {
+      margin-bottom: 14px
+    }
+
+    .form-group label {
+      display: block;
       margin-bottom: 8px;
-      min-height: 36px;
+      font-weight: 600
     }
 
-    .project-price {
-      color: #6e48aa;
-      font-weight: 600;
-      font-size: 1rem;
+    .form-control {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      font-size: 0.98rem
     }
 
-    .nav-btns {
-      display: flex;
-      justify-content: space-between;
-      margin: 32px 0 0 0;
-    }
-
-    .nav-btns button {
-      background: #6e48aa;
+    .submit-btn {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
       color: #fff;
       border: none;
-      padding: 10px 24px;
-      border-radius: 6px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .nav-btns button:hover {
-      background: #9d50bb;
-    }
-
-    .contact-section {
-      margin-top: 48px;
-      background: #f8f9fa;
+      padding: 12px 18px;
       border-radius: 10px;
-      padding: 32px;
+      font-weight: 700;
+      cursor: pointer
     }
 
-    @media (max-width: 700px) {
-      .container {
-        padding: 10px;
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 18px
+    }
+
+    .related-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(16, 12, 54, 0.04);
+      cursor: pointer
+    }
+
+    .related-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover
+    }
+
+    .related-card .rc-body {
+      padding: 12px
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: #333;
+      text-decoration: none;
+      font-weight: 600
+    }
+
+    @media(max-width:980px) {
+      .detail-card {
+        grid-template-columns: 1fr
       }
 
-      .header {
-        padding: 16px 0 10px 0;
+      .project-image {
+        height: 220px
+      }
+
+      .panel {
+        padding: 16px
       }
     }
   </style>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "Computer Science & AI Project Ideas",
-      "description": "A collection of innovative Computer Science, AI, and Machine Learning project ideas for students.",
-      "itemListElement": []
-    }
-  </script>
 </head>
 
 <body>
-  <div class="container">
-    <div class="header">
-      <h1 id="domainTitle">Projects</h1>
+
+  <body>
+    <header>
+      <div class="container">
+        <a class="logo" href="index.html"><i class="fas fa-flask"
+            style="color:#ffcc00;margin-right:10px"></i>SmartLabProjects</a>
+        <nav aria-label="main-nav">
+          <ul style="display:flex;gap:18px;list-style:none;margin:0;padding:0;color:#fff">
+            <li><a href="index.html" style="color:#fff;text-decoration:none">Home</a></li>
+            <li><a href="index.html#projects" style="color:#fff;text-decoration:none">Projects</a></li>
+            <li><a href="index.html#contact" style="color:#fff;text-decoration:none">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Page Hero (under header) -->
+    <div class="page-hero"
+      style="background: linear-gradient(120deg, #6e48aa 60%, #9d50bb 100%); color: #fff; padding: 28px 0;">
+      <div class="container" style="max-width:1150px;margin:0 auto;padding:0 20px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;">
+          <div>
+            <h2 style="margin:0 0 4px; font-size:1.4rem; font-weight:700">Get Help & Mentorship for this Project</h2>
+            <p style="margin:0;opacity:0.95">University project guidance, documentation, and code explanation from
+              experts.</p>
+          </div>
+          <div style="font-weight:600;opacity:0.95">Where Creativity Meets Code</div>
+        </div>
+      </div>
     </div>
-    <div class="projects-list-grid" id="projectsListGrid"></div>
-    <div class="nav-btns">
-      <button id="prevDomainBtn">&laquo; Previous Domain</button>
-      <button id="backHomeBtn">Back to Home</button>
-      <button id="nextDomainBtn">Next Domain &raquo;</button>
-    </div>
-    <div class="contact-section" id="contactSection"></div>
-  </div>
-  <script type="module">
-    import { projects } from './projects.js';
-    import { contactDetails } from './contact.js';
-    const params = new URLSearchParams(window.location.search);
-    const domain = params.get('domain');
-    const allDomains = Array.from(new Set(projects.map(p => p.domain)));
-    let currentDomainIdx = allDomains.indexOf(domain);
-    function renderProjectsList() {
-      document.getElementById('domainTitle').textContent = domain ? domain : 'Projects';
-      const grid = document.getElementById('projectsListGrid');
-      grid.innerHTML = '';
-      const domainProjects = projects.filter(p => p.domain === domain);
-      domainProjects.forEach((project, idx) => {
-        const card = document.createElement('div');
-        card.className = 'project-card';
-        const detailUrl = `project-details.html?id=${projects.indexOf(project)}`;
-        card.innerHTML = `
-          <a href="${detailUrl}" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
-            <div class="project-image"><img src="${project.image || ''}" alt="${project.title} - Academic Project" loading="lazy"></div>
-            <div class="project-content">
-              <h3>${project.title}</h3>
-              <p>${project.description ? project.description.substring(0, 70) + (project.description.length > 70 ? '...' : '') : ''}</p>
-              <div class="project-price">₹${project.difficulty ? (project.difficulty in prices ? prices[project.difficulty] : '---') : '---'}</div>
+
+    <main>
+      <div class="page-wrap">
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+        <div class="detail-card">
+          <div>
+            <div class="panel">
+              <img id="projectImage" class="project-image" src="" alt="Project Image">
+              <h1 class="project-title" id="projectTitle"></h1>
+              <div class="project-meta" id="projectMeta"></div>
+              <p class="project-desc" id="projectDesc"></p>
+              <div id="relatedSection">
+                <h3 style="margin-top:6px">Related Projects</h3>
+                <div id="relatedGrid" class="related-grid"></div>
+              </div>
             </div>
-          </a>
-        `;
-        // card.onclick removed in favor of anchor tag
-        grid.appendChild(card);
+          </div>
+
+          <aside>
+            <div class="panel">
+              <h4>Project Details</h4>
+              <p><strong>Domain:</strong> <span id="pdDomain"></span></p>
+              <p><strong>Difficulty:</strong> <span id="pdDifficulty"></span></p>
+              <p><strong>Technology:</strong> <span id="pdTech"></span></p>
+              <p><strong>Estimated Price:</strong> <span id="pdPrice"></span></p>
+              <hr style="margin:14px 0">
+              <div class="form-title">Contact About this Project</div>
+              <form id="inquiryForm">
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="domain">Project Domain</label>
+                  <select id="domain" name="domain" class="form-control">
+                    <option value="">Select domain</option>
+                  </select>
+                </div>
+
+                <div class="form-group" id="customDomainGroupDetails" style="display:none;">
+                  <label for="custom_domain">Custom Domain / Area</label>
+                  <input type="text" id="custom_domain" name="custom_domain" class="form-control"
+                    placeholder="Enter custom domain or area (optional)">
+                </div>
+
+                <div class="form-group" id="projectTypeGroup">
+                  <label for="project_type">Project Type</label>
+                  <select id="project_type" name="project_type" class="form-control">
+                    <option value="">Select project</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="priority">Priority</label>
+                  <select id="priority" name="priority" class="form-control">
+                    <option value="">Select priority (optional)</option>
+                    <option value="High">High</option>
+                    <option value="Moderate">Moderate</option>
+                    <option value="Low">Low</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="location">Location</label>
+                  <input type="text" id="location" name="location" class="form-control"
+                    placeholder="City, Country (optional)">
+                </div>
+
+                <div class="form-group">
+                  <label for="college">College / Institution (optional)</label>
+                  <input type="text" id="college" name="college" class="form-control"
+                    placeholder="College name (optional)">
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Project Details (optional)</label>
+                  <textarea id="message" name="message" class="form-control"
+                    placeholder="Describe requirements, deadline, or extras"></textarea>
+                </div>
+                <input type="hidden" id="projectTitleHidden" name="project_title">
+                <button type="submit" class="submit-btn">Send Inquiry <i class="fas fa-paper-plane"></i></button>
+              </form>
+              <div id="formSuccess" style="display:none; color: #28a745; margin-top: 12px; font-weight: 600;">Thank you!
+                We'll contact you soon.</div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <!-- Contact details and quick actions -->
+    <section style="padding: 28px 0; background: #f8f6fc;">
+      <div class="container" style="max-width:1150px;margin:0 auto;padding:0 20px;">
+        <div class="panel" style="display:flex;gap:18px;align-items:flex-start;">
+          <div style="flex:1">
+            <h3 style="margin-top:0">Contact & Quick Actions</h3>
+            <div id="contactDetails"></div>
+          </div>
+          <div style="width:260px">
+            <h4 style="margin:0 0 8px">Quick Links</h4>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <a href="index.html#contact" style="text-decoration:none;color:var(--primary);font-weight:600">Open
+                Contact Form</a>
+              <a href="index.html#projects" style="text-decoration:none;color:var(--primary);font-weight:600">Browse
+                Projects</a>
+              <a href="index.html#pricing" style="text-decoration:none;color:var(--primary);font-weight:600">View
+                Pricing</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="module">
+      import { projects } from './projects.js';
+      import { contactDetails } from './contact.js';
+
+      const params = new URLSearchParams(window.location.search);
+      const idx = Math.max(0, parseInt(params.get('id') || '0', 10));
+      const project = projects[idx] || projects[0];
+
+      // populate main project details
+      document.getElementById('projectImage').src = project.image || 'https://via.placeholder.com/800x420?text=Project';
+      document.getElementById('projectImage').loading = "lazy";
+      document.getElementById('projectTitle').textContent = project.title;
+      document.title = `${project.title} - Project Guidance & Mentorship | SmartLabProjects`;
+      document.getElementById('projectMeta').textContent = `${project.domain}${project.subdomain ? ' | ' + project.subdomain : ''} • ${project.tech} • ${project.difficulty}`;
+      document.getElementById('projectDesc').textContent = (project.description || '') + " Ideal for final year students looking for complete AI project with code and documentation, semester project mentorship, and end-to-end guidance.";
+      document.getElementById('pdDomain').textContent = project.domain;
+      document.getElementById('pdDifficulty').textContent = project.difficulty || '';
+      document.getElementById('pdTech').textContent = project.tech || '';
+
+      // Inject Schema.org JSON-LD
+      const schemaScript = document.createElement('script');
+      schemaScript.type = 'application/ld+json';
+      const schemaData = {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": project.title + " - Project Guidance & Mentorship",
+        "image": project.image || "https://www.smartlabprojects.com/logo.png",
+        "description": "Expert guidance, code explanation, and documentation mentorship for " + project.title + ". Ideal for university students.",
+        "brand": {
+          "@type": "Brand",
+          "name": "SmartLabProjects"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": window.location.href,
+          "priceCurrency": "INR",
+          "price": "2500",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@type": "Organization",
+            "name": "SmartLabProjects"
+          }
+        }
+      };
+      // We'll update price dynamically if available
+      fetch('./prices.json').then(r => r.json()).then(prices => {
+        const price = prices[project.difficulty] ? `₹${prices[project.difficulty]}` : 'Contact for Price';
+        document.getElementById('pdPrice').textContent = price;
+        if (prices[project.difficulty]) {
+          schemaData.offers.price = prices[project.difficulty].replace(/,/g, '');
+        }
+        schemaScript.text = JSON.stringify(schemaData);
+        document.head.appendChild(schemaScript);
+      }).catch(() => {
+        document.getElementById('pdPrice').textContent = 'Contact for Price';
+        schemaScript.text = JSON.stringify(schemaData);
+        document.head.appendChild(schemaScript);
       });
-    }
-    // Navigation
-    document.getElementById('prevDomainBtn').onclick = () => {
-      if (currentDomainIdx > 0) {
-        window.location.href = `project-list.html?domain=${encodeURIComponent(allDomains[currentDomainIdx - 1])}`;
+
+      // Populate domain and project type selects dynamically
+      const domainSelect = document.getElementById('domain');
+      const projectTypeSelect = document.getElementById('project_type');
+
+      function populateDomainOptions() {
+        if (!domainSelect) return;
+        const unique = Array.from(new Set(projects.map(p => p.domain)));
+        domainSelect.innerHTML = '<option value="">Select domain</option>' + unique.map(d => `<option value="${d}">${d}</option>`).join('') + '<option value="Other">Other (Custom domain)</option>';
+        // set current domain if available
+        domainSelect.value = project.domain || '';
+        // hide project type select if domain is Other
+        const projectTypeGroup = document.getElementById('projectTypeGroup');
+        if (projectTypeGroup) projectTypeGroup.style.display = (domainSelect.value === 'Other') ? 'none' : 'block';
+        populateProjectOptions(project.domain);
+        // show/hide custom domain field initially
+        const customGroup = document.getElementById('customDomainGroupDetails');
+        if (domainSelect.value === 'Other') {
+          if (customGroup) customGroup.style.display = 'block';
+        } else {
+          if (customGroup) customGroup.style.display = 'none';
+        }
       }
-    };
-    document.getElementById('nextDomainBtn').onclick = () => {
-      if (currentDomainIdx < allDomains.length - 1) {
-        window.location.href = `project-list.html?domain=${encodeURIComponent(allDomains[currentDomainIdx + 1])}`;
+
+      function populateProjectOptions(domain) {
+        if (!projectTypeSelect) return;
+        // if domain is 'Other' we don't populate project types
+        if (!domain || domain === 'Other') {
+          projectTypeSelect.innerHTML = '<option value="">Select project</option>';
+          return;
+        }
+        const filtered = projects.filter(p => p.domain === domain);
+        projectTypeSelect.innerHTML = '<option value="">Select project</option>' + filtered.map(p => `<option value="${p.title}">${p.title}</option>`).join('');
+        // set to current project title when domain matches
+        if (domain === project.domain) projectTypeSelect.value = project.title;
       }
-    };
-    document.getElementById('backHomeBtn').onclick = () => window.location.href = 'index.html';
-    // Contact Section
-    function renderContact() {
-      const c = contactDetails;
-      document.getElementById('contactSection').innerHTML = `
-        <h2 style="color:#6e48aa;">Contact Us</h2>
-        <div style="margin-bottom:12px;"><b>Email:</b> ${c.email}</div>
-        <div style="margin-bottom:12px;"><b>Phone:</b> ${c.phones.join(' / ')}</div>
-        <div style="margin-bottom:12px;"><b>Address:</b> ${c.address}</div>
-        <div style="margin-bottom:12px;"><b>Social:</b> <a href="${c.social.linkedin}" target="_blank">LinkedIn</a> | <a href="${c.social.twitter}" target="_blank">Twitter</a> | <a href="${c.social.github}" target="_blank">GitHub</a> | <a href="${c.social.instagram}" target="_blank">Instagram</a></div>
-      `;
-    }
-    // Prices
-    let prices = {};
-    fetch('./prices.json').then(r => r.json()).then(data => { prices = data; renderProjectsList(); });
-    renderContact();
-  </script>
-</body>
+
+      if (domainSelect) {
+        populateDomainOptions();
+        domainSelect.addEventListener('change', (e) => {
+          populateProjectOptions(e.target.value);
+          const customGroup = document.getElementById('customDomainGroupDetails');
+          if (e.target.value === 'Other') { if (customGroup) customGroup.style.display = 'block'; } else { if (customGroup) customGroup.style.display = 'none'; }
+        });
+      }
+
+      // projectTypeSelect has no 'Other' option now; no change handler needed
+      if (projectTypeSelect) {
+        // keep placeholder handler in case of future changes
+      }
+
+      // related projects
+      function renderRelated() {
+        const relatedGrid = document.getElementById('relatedGrid');
+        if (!relatedGrid) return;
+        const related = projects.filter(p => p.domain === project.domain && p.title !== project.title).slice(0, 6);
+        relatedGrid.innerHTML = related.map((p, i) => `
+        <div class="related-card" data-idx="${projects.indexOf(p)}">
+          <img src="${p.image || 'https://via.placeholder.com/400x200'}" alt="${p.title}">
+          <div class="rc-body"><strong style="display:block;margin-bottom:6px">${p.title}</strong><small style="color:#666">${p.tech}</small></div>
+        </div>
+      `).join('');
+        // attach click handlers
+        relatedGrid.querySelectorAll('.related-card').forEach(card => {
+          card.addEventListener('click', () => {
+            const i = parseInt(card.dataset.idx, 10);
+            window.location.href = `project-details.html?id=${i}`;
+          });
+        });
+      }
+
+      renderRelated();
+
+      // render contact details in aside (non-blocking)
+      const cd = document.getElementById('contactDetails');
+      if (cd) cd.innerHTML = `<p><strong>Email:</strong> ${contactDetails.email}</p><p><strong>Phone:</strong> ${contactDetails.phones.join(' / ')}</p><p><strong>Address:</strong> ${contactDetails.address}</p>`;
+
+      // form handling: local success and set hidden project title
+      const inquiryForm = document.getElementById('inquiryForm');
+      const projectTitleHidden = document.getElementById('projectTitleHidden');
+      if (projectTitleHidden) projectTitleHidden.value = project.title;
+      if (inquiryForm) {
+        inquiryForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          // validate required fields
+          if (!inquiryForm.checkValidity()) { inquiryForm.reportValidity(); return; }
+          const ts = document.getElementById('timestamp');
+          if (ts) ts.value = new Date().toISOString();
+          const payload = {};
+          new FormData(inquiryForm).forEach((v, k) => { payload[k] = v; });
+
+          // Send to local server endpoint when running locally, else to /api/contact
+          try {
+            const endpoint = '/send-local'; // Relative path works if served by server.js
+
+            fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+              .then(async r => {
+                const j = await r.json();
+                if (!r.ok) throw new Error(j.error || 'Server error');
+                console.log('send result', j);
+                const succ = document.getElementById('formSuccess');
+                if (succ) { succ.style.display = 'block'; succ.textContent = 'Inquiry sent successfully!'; }
+                inquiryForm.reset();
+                setTimeout(() => { if (succ) succ.style.display = 'none'; }, 5000);
+              })
+              .catch(e => {
+                console.warn('send failed', e);
+                alert('Failed to send inquiry: ' + e.message + '. \n\nEnsure the local server is running (npm run start-server).');
+              });
+          } catch (err) {
+            console.warn('Could not send inquiry', err);
+            alert('Unexpected error: ' + err.message);
+          }
+        });
+      }
+    </script>
+    <script type="module" src="./floating.js"></script>
+  </body>
 
 </html>
