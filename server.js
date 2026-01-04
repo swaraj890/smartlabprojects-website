@@ -10,6 +10,7 @@ dotenv.config();
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.static('.')); // Serve static files from current directory
 
 const PORT = process.env.PORT || 3000;
 
