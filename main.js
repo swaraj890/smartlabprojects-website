@@ -143,6 +143,8 @@ function renderDomainsWithProjects() {
   function createProjectCard(project) {
     const card = document.createElement('div');
     card.className = 'project-card';
+    const projectIndex = projects.indexOf(project);
+    const detailUrl = `project-details.html?id=${projectIndex}`;
 
     const price = prices[project.difficulty]
       ? `₹${prices[project.difficulty]}`
@@ -154,32 +156,25 @@ function renderDomainsWithProjects() {
         : project.description)
       : 'No description available';
 
+    // Wrap in anchor for SEO
     card.innerHTML = `
-      <div class="project-image">
-        <img src="${project.image || 'https://via.placeholder.com/400x200?text=Project'}" 
-             alt="${project.title}"
-             onerror="this.src='https://via.placeholder.com/400x200?text=Project'">
-        <span class="project-category">${project.domain}</span>
-      </div>
-      <div class="project-content">
-        <h3>${project.title}</h3>
-        <p>${description}</p>
-        <div class="project-footer">
-          <span class="project-price">${price}</span>
-          <button class="details-btn">View Details</button>
+      <a href="${detailUrl}" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
+        <div class="project-image">
+          <img src="${project.image || 'https://via.placeholder.com/400x200?text=Project'}" 
+               alt="${project.title} - AI Project Guidance"
+               onerror="this.src='https://via.placeholder.com/400x200?text=Project'">
+          <span class="project-category">${project.domain}</span>
         </div>
-      </div>
+        <div class="project-content">
+          <h3>${project.title}</h3>
+          <p>${description}</p>
+          <div class="project-footer">
+            <span class="project-price">${price}</span>
+            <span class="details-btn">View Details</span>
+          </div>
+        </div>
+      </a>
     `;
-
-    // Click handlers
-    const handleClick = (e) => {
-      if (e) e.stopPropagation();
-      const projectIndex = projects.indexOf(project);
-      window.location.href = `project-details.html?id=${projectIndex}`;
-    };
-
-    card.querySelector('.details-btn').onclick = handleClick;
-    card.onclick = handleClick;
 
     return card;
   }
@@ -270,20 +265,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Send to local server endpoint (when running locally)
       try {
-        const endpoint = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
-          ? 'http://localhost:3000/send-local'
-          : '/api/contact';
+        const endpoint = '/send-local'; // Relative path works if served by server.js
+
         fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
-          .then(r => r.json())
-          .then(j => console.log('send result', j))
-          .catch(e => console.warn('send failed', e));
+          .then(async r => {
+            const j = await r.json();
+            if (!r.ok) throw new Error(j.error || 'Server error');
+            console.log('send result', j);
+            if (successEl) { successEl.style.display = 'block'; successEl.textContent = 'Message sent successfully!'; }
+            form.reset();
+            if (successEl) successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            setTimeout(() => { if (successEl) successEl.style.display = 'none'; }, 5000);
+          })
+          .catch(e => {
+            console.warn('send failed', e);
+            alert('Failed to send message: ' + e.message + '. \n\nEnsure the local server is running (npm run start-server).');
+          });
       } catch (err) {
         console.warn('Send failed', err);
+        alert('Unexpected error: ' + err.message);
       }
-
-      if (successEl) { successEl.style.display = 'block'; }
-      form.reset();
-      if (successEl) successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
   }
   // Wait for prices to load, then render
