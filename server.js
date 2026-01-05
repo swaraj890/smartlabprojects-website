@@ -10,6 +10,7 @@ dotenv.config();
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.static('.')); // Serve static files from current directory
 
 const PORT = process.env.PORT || 3000;
 
@@ -18,6 +19,8 @@ function getEnv(name) {
 }
 
 app.post('/send-local', async (req, res) => {
+  console.log('📨 Received POST /send-local');
+  console.log('Body:', JSON.stringify(req.body, null, 2));
   const data = req.body || {};
   const name = data.name || data.fullname || 'No name';
   const email = data.email || 'no-reply@example.com';

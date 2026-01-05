@@ -97,9 +97,10 @@ function renderDomainsWithProjects() {
     projectsArea.innerHTML = '';
 
     // Filter projects based on selected domain
-    let filteredProjects = selectedDomain === 'All'
-      ? projects
-      : projects.filter(p => p.domain === selectedDomain);
+    let filteredProjects = projects;
+    if (selectedDomain !== 'All') {
+      filteredProjects = projects.filter(p => p.domain === selectedDomain);
+    }
 
     // Take only top 6 projects
     const displayProjects = filteredProjects.slice(0, 6);
