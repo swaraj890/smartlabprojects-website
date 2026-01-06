@@ -19,8 +19,8 @@ export default async function handler(req, res) {
   const message = data.message || '';
   const timestamp = data.timestamp || new Date().toISOString();
 
-  if (!name || !email || !message) {
-    return res.status(400).json({ error: 'Missing required fields (name, email, message)' });
+  if (!name || (!email && !phone)) {
+    return res.status(400).json({ error: 'Please provide Name and at least one contact method (Email or Phone)' });
   }
 
   const summary = `New inquiry from ${name} <${email}>\nDomain: ${domain} | Project: ${project_type} | Phone: ${phone} | Time: ${timestamp}\n\n${message}`;
