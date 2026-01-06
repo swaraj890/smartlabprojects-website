@@ -182,64 +182,64 @@
 </head>
 
 <body>
+  <!-- Header -->
+  <header id="header"
+    style="position:fixed;top:0;width:100%;height:84px;background:linear-gradient(135deg, #6e48aa, #9d50bb);display:flex;align-items:center;z-index:1000;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+    <div class="container header-container"
+      style="display:flex;justify-content:space-between;align-items:center;width:100%;max-width:1200px;margin:0 auto;padding:0 20px;">
+      <a href="index.html" class="logo"
+        style="display:flex;align-items:center;font-size:1.8rem;font-weight:700;text-decoration:none;color:white;">
+        <i class="fas fa-flask" style="margin-right:10px;color:#ffcc00;"></i>
+        <span style="font-weight:800;letter-spacing:1px;">SmartLabProjects</span>
+      </a>
+      <nav>
+        <ul id="navMenu" style="display:flex;list-style:none;gap:30px;margin:0;padding:0;">
+          <li><a href="index.html#home" style="color:white;text-decoration:none;font-weight:500;">Home</a></li>
+          <li><a href="index.html#about" style="color:white;text-decoration:none;font-weight:500;">About</a></li>
+          <li><a href="index.html#services" style="color:white;text-decoration:none;font-weight:500;">Services</a>
+          </li>
+          <li><a href="index.html#projects" style="color:white;text-decoration:none;font-weight:500;">Projects</a>
+          </li>
+          <li><a href="index.html#pricing" style="color:white;text-decoration:none;font-weight:500;">Pricing</a></li>
+          <li><a href="index.html#contact" style="color:white;text-decoration:none;font-weight:500;">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <body>
-    <!-- Header -->
-    <header id="header"
-      style="position:fixed;top:0;width:100%;height:84px;background:linear-gradient(135deg, #6e48aa, #9d50bb);display:flex;align-items:center;z-index:1000;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-      <div class="container header-container"
-        style="display:flex;justify-content:space-between;align-items:center;width:100%;max-width:1200px;margin:0 auto;padding:0 20px;">
-        <a href="index.html" class="logo"
-          style="display:flex;align-items:center;font-size:1.8rem;font-weight:700;text-decoration:none;color:white;">
-          <i class="fas fa-flask" style="margin-right:10px;color:#ffcc00;"></i>
-          <span style="font-weight:800;letter-spacing:1px;">SmartLabProjects</span>
-        </a>
-        <nav>
-          <ul id="navMenu" style="display:flex;list-style:none;gap:30px;margin:0;padding:0;">
-            <li><a href="index.html#home" style="color:white;text-decoration:none;font-weight:500;">Home</a></li>
-            <li><a href="index.html#about" style="color:white;text-decoration:none;font-weight:500;">About</a></li>
-            <li><a href="index.html#services" style="color:white;text-decoration:none;font-weight:500;">Services</a>
-            </li>
-            <li><a href="index.html#projects" style="color:white;text-decoration:none;font-weight:500;">Projects</a>
-            </li>
-            <li><a href="index.html#pricing" style="color:white;text-decoration:none;font-weight:500;">Pricing</a></li>
-            <li><a href="index.html#contact" style="color:white;text-decoration:none;font-weight:500;">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <!-- Page Hero (under header) -->
-    <div class="page-hero"
-      style="background: linear-gradient(120deg, #6e48aa 60%, #9d50bb 100%); color: #fff; padding: 28px 0;">
-      <div class="container" style="max-width:1150px;margin:0 auto;padding:0 20px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;">
-          <div>
-            <h2 style="margin:0 0 4px; font-size:1.4rem; font-weight:700">Get Help & Mentorship for this Project</h2>
-            <p style="margin:0;opacity:0.95">University project guidance, documentation, and code explanation from
-              experts.</p>
-          </div>
-          <div style="font-weight:600;opacity:0.95">Where Creativity Meets Code</div>
+  <!-- Page Hero (under header) -->
+  <div class="page-hero"
+    style="background: linear-gradient(120deg, #6e48aa 60%, #9d50bb 100%); color: #fff; padding: 28px 0;">
+    <div class="container" style="max-width:1150px;margin:0 auto;padding:0 20px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;">
+        <div>
+          <h2 style="margin:0 0 4px; font-size:1.4rem; font-weight:700">Get Help & Mentorship for this Project</h2>
+          <p style="margin:0;opacity:0.95">University project guidance, documentation, and code explanation from
+            experts.</p>
         </div>
+        <div style="font-weight:600;opacity:0.95">Where Creativity Meets Code</div>
       </div>
     </div>
+  </div>
 
-    <main>
-      <div class="page-wrap">
-        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
-        <div class="detail-card">
-          <div>
-            <div class="panel">
-              <img id="projectImage" class="project-image" src="" alt="Project Image">
-              <h1 class="project-title" id="projectTitle"></h1>
-              <div class="project-meta" id="projectMeta"></div>
-              <p class="project-desc" id="projectDesc"></p>
-              <div id="relatedSection">
-                <h3 style="margin-top:6px">Related Projects</h3>
-                <div id="relatedGrid" class="related-grid"></div>
-              </div>
+  <main>
+    <div class="page-wrap">
+      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+      <div class="detail-card">
+        <div>
+          <div class="panel">
+            <img id="projectImage" class="project-image" src="" alt="Project Image">
+            <h1 class="project-title" id="projectTitle"></h1>
+            <div class="project-meta" id="projectMeta"></div>
+            <p class="project-desc" id="projectDesc"></p>
+            <div id="relatedSection">
+              <h3 style="margin-top:6px">Related Projects</h3>
+              <div id="relatedGrid" class="related-grid"></div>
             </div>
           </div>
-
+        </div>
+        <div>
+          <!-- Sidebar with Form -->
           <aside>
             <div class="panel">
               <h4>Project Details</h4>
@@ -318,288 +318,288 @@
           </aside>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <!-- Contact Section (Same as Index) -->
-    <section class="section contact" id="contact" style="background: #fff; padding: 100px 0;">
-      <div class="container" style="max-width:1200px;margin:0 auto;padding:0 20px;">
-        <div class="section-title fade-in" style="text-align:center;margin-bottom:60px;">
-          <h2 style="font-size:2.5rem;color:#6e48aa;margin-bottom:15px;">Ready to Build Your Dream Project?</h2>
-          <p style="font-size:1.1rem;color:#22223b;">Get expert mentorship, production-ready code, and professional
-            documentation in just 2 weeks.</p>
-          <div
-            style="width:80px;height:4px;background:linear-gradient(to right, #6e48aa, #9d50bb);margin:15px auto;border-radius:2px;">
-          </div>
+  <!-- Contact Section (Same as Index) -->
+  <section class="section contact" id="contact" style="background: #fff; padding: 100px 0;">
+    <div class="container" style="max-width:1200px;margin:0 auto;padding:0 20px;">
+      <div class="section-title fade-in" style="text-align:center;margin-bottom:60px;">
+        <h2 style="font-size:2.5rem;color:#6e48aa;margin-bottom:15px;">Ready to Build Your Dream Project?</h2>
+        <p style="font-size:1.1rem;color:#22223b;">Get expert mentorship, production-ready code, and professional
+          documentation in just 2 weeks.</p>
+        <div
+          style="width:80px;height:4px;background:linear-gradient(to right, #6e48aa, #9d50bb);margin:15px auto;border-radius:2px;">
         </div>
-        <div class="contact-container" style="display:flex;gap:32px;align-items:flex-start;justify-content:center;">
-          <!-- Reusing the form logic but simplifying for this page since we already have a sidebar form. 
+      </div>
+      <div class="contact-container" style="display:flex;gap:32px;align-items:flex-start;justify-content:center;">
+        <!-- Reusing the form logic but simplifying for this page since we already have a sidebar form. 
                      For visual consistency, we'll keep the layout but maybe point to the sidebar or just show the details. 
                      Actually, user asked for "exact contact session". Let's put the contact details here. -->
-          <div class="contact-info"
-            style="flex:0 0 340px;background:linear-gradient(180deg, rgba(110,72,170,0.06), rgba(157,80,187,0.03));padding:22px;border-radius:12px;">
-            <div id="bottomContactDetails"></div> <!-- Will be populated by JS -->
-          </div>
+        <div class="contact-info"
+          style="flex:0 0 340px;background:linear-gradient(180deg, rgba(110,72,170,0.06), rgba(157,80,187,0.03));padding:22px;border-radius:12px;">
+          <div id="bottomContactDetails"></div> <!-- Will be populated by JS -->
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer style="background: #22223b; color: #fff; padding: 60px 0 20px;">
-      <div class="container" style="max-width:1200px;margin:0 auto;padding:0 20px;">
-        <div class="footer-container"
-          style="display:grid;grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));gap:40px;margin-bottom:40px;">
-          <div class="footer-col">
-            <h3
-              style="font-size:1.3rem;margin-bottom:20px;border-bottom:2px solid #6e48aa;padding-bottom:10px;display:inline-block;">
-              About SmartLabProjects</h3>
-            <p style="opacity:0.8;margin-bottom:10px;">SmartLabProjects - From Idea to Execution. We empower students
-              with innovative project solutions, mentorship, and career-ready skills.</p>
-          </div>
-          <div class="footer-col">
-            <h3
-              style="font-size:1.3rem;margin-bottom:20px;border-bottom:2px solid #6e48aa;padding-bottom:10px;display:inline-block;">
-              Quick Links</h3>
-            <ul class="footer-links" style="list-style:none;padding:0;">
-              <li style="margin-bottom:10px;"><a href="index.html#home"
-                  style="color:white;opacity:0.8;text-decoration:none;">Home</a></li>
-              <li style="margin-bottom:10px;"><a href="index.html#about"
-                  style="color:white;opacity:0.8;text-decoration:none;">About Us</a></li>
-              <li style="margin-bottom:10px;"><a href="index.html#services"
-                  style="color:white;opacity:0.8;text-decoration:none;">Services</a></li>
-              <li style="margin-bottom:10px;"><a href="index.html#projects"
-                  style="color:white;opacity:0.8;text-decoration:none;">Projects</a></li>
-              <li style="margin-bottom:10px;"><a href="index.html#pricing"
-                  style="color:white;opacity:0.8;text-decoration:none;">Pricing</a></li>
-              <li style="margin-bottom:10px;"><a href="index.html#contact"
-                  style="color:white;opacity:0.8;text-decoration:none;">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h3
-              style="font-size:1.3rem;margin-bottom:20px;border-bottom:2px solid #6e48aa;padding-bottom:10px;display:inline-block;">
-              Services</h3>
-            <ul class="footer-links" style="list-style:none;padding:0;">
-              <li style="margin-bottom:10px;"><a href="index.html#projects"
-                  style="color:white;opacity:0.8;text-decoration:none;">AI & ML Projects</a></li>
-              <li style="margin-bottom:10px;"><a href="index.html#projects"
-                  style="color:white;opacity:0.8;text-decoration:none;">Web Development</a></li>
-              <li style="margin-bottom:10px;"><a href="index.html#projects"
-                  style="color:white;opacity:0.8;text-decoration:none;">Data Science</a></li>
-              <li style="margin-bottom:10px;"><a href="index.html#projects"
-                  style="color:white;opacity:0.8;text-decoration:none;">Blockchain</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h3
-              style="font-size:1.3rem;margin-bottom:20px;border-bottom:2px solid #6e48aa;padding-bottom:10px;display:inline-block;">
-              Company</h3>
-            <ul class="footer-links" style="list-style:none;padding:0;">
-              <li style="margin-bottom:10px;"><a href="index.html#about"
-                  style="color:white;opacity:0.8;text-decoration:none;">About Us</a></li>
-              <li style="margin-bottom:10px;"><a href="index.html#contact"
-                  style="color:white;opacity:0.8;text-decoration:none;">Careers</a></li>
-              <li style="margin-bottom:10px;"><a href="index.html#contact"
-                  style="color:white;opacity:0.8;text-decoration:none;">Contact</a></li>
-            </ul>
-          </div>
+  <!-- Footer -->
+  <footer style="background: #22223b; color: #fff; padding: 60px 0 20px;">
+    <div class="container" style="max-width:1200px;margin:0 auto;padding:0 20px;">
+      <div class="footer-container"
+        style="display:grid;grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));gap:40px;margin-bottom:40px;">
+        <div class="footer-col">
+          <h3
+            style="font-size:1.3rem;margin-bottom:20px;border-bottom:2px solid #6e48aa;padding-bottom:10px;display:inline-block;">
+            About SmartLabProjects</h3>
+          <p style="opacity:0.8;margin-bottom:10px;">SmartLabProjects - From Idea to Execution. We empower students
+            with innovative project solutions, mentorship, and career-ready skills.</p>
         </div>
-        <div class="footer-bottom"
-          style="text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);">
-          <p style="opacity:0.7;font-size:0.9rem;">&copy; 2025 SmartLabProjects. All Rights Reserved.</p>
+        <div class="footer-col">
+          <h3
+            style="font-size:1.3rem;margin-bottom:20px;border-bottom:2px solid #6e48aa;padding-bottom:10px;display:inline-block;">
+            Quick Links</h3>
+          <ul class="footer-links" style="list-style:none;padding:0;">
+            <li style="margin-bottom:10px;"><a href="index.html#home"
+                style="color:white;opacity:0.8;text-decoration:none;">Home</a></li>
+            <li style="margin-bottom:10px;"><a href="index.html#about"
+                style="color:white;opacity:0.8;text-decoration:none;">About Us</a></li>
+            <li style="margin-bottom:10px;"><a href="index.html#services"
+                style="color:white;opacity:0.8;text-decoration:none;">Services</a></li>
+            <li style="margin-bottom:10px;"><a href="index.html#projects"
+                style="color:white;opacity:0.8;text-decoration:none;">Projects</a></li>
+            <li style="margin-bottom:10px;"><a href="index.html#pricing"
+                style="color:white;opacity:0.8;text-decoration:none;">Pricing</a></li>
+            <li style="margin-bottom:10px;"><a href="index.html#contact"
+                style="color:white;opacity:0.8;text-decoration:none;">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3
+            style="font-size:1.3rem;margin-bottom:20px;border-bottom:2px solid #6e48aa;padding-bottom:10px;display:inline-block;">
+            Services</h3>
+          <ul class="footer-links" style="list-style:none;padding:0;">
+            <li style="margin-bottom:10px;"><a href="index.html#projects"
+                style="color:white;opacity:0.8;text-decoration:none;">AI & ML Projects</a></li>
+            <li style="margin-bottom:10px;"><a href="index.html#projects"
+                style="color:white;opacity:0.8;text-decoration:none;">Web Development</a></li>
+            <li style="margin-bottom:10px;"><a href="index.html#projects"
+                style="color:white;opacity:0.8;text-decoration:none;">Data Science</a></li>
+            <li style="margin-bottom:10px;"><a href="index.html#projects"
+                style="color:white;opacity:0.8;text-decoration:none;">Blockchain</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3
+            style="font-size:1.3rem;margin-bottom:20px;border-bottom:2px solid #6e48aa;padding-bottom:10px;display:inline-block;">
+            Company</h3>
+          <ul class="footer-links" style="list-style:none;padding:0;">
+            <li style="margin-bottom:10px;"><a href="index.html#about"
+                style="color:white;opacity:0.8;text-decoration:none;">About Us</a></li>
+            <li style="margin-bottom:10px;"><a href="index.html#contact"
+                style="color:white;opacity:0.8;text-decoration:none;">Careers</a></li>
+            <li style="margin-bottom:10px;"><a href="index.html#contact"
+                style="color:white;opacity:0.8;text-decoration:none;">Contact</a></li>
+          </ul>
         </div>
       </div>
-    </footer>
+      <div class="footer-bottom" style="text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);">
+        <p style="opacity:0.7;font-size:0.9rem;">&copy; 2025 SmartLabProjects. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-    <script type="module">
-      import { projects } from './projects.js';
-      import { contactDetails } from './contact.js';
+  <script type="module">
+    import { projects } from './projects.js';
+    import { contactDetails } from './contact.js';
 
-      const params = new URLSearchParams(window.location.search);
-      const idx = Math.max(0, parseInt(params.get('id') || '0', 10));
-      const project = projects[idx] || projects[0];
+    const params = new URLSearchParams(window.location.search);
+    const idx = Math.max(0, parseInt(params.get('id') || '0', 10));
+    const project = projects[idx] || projects[0];
 
-      // populate main project details
-      document.getElementById('projectImage').src = project.image || 'https://via.placeholder.com/800x420?text=Project';
-      document.getElementById('projectImage').loading = "lazy";
-      document.getElementById('projectTitle').textContent = project.title;
-      document.title = `${project.title} - Project Guidance & Mentorship | SmartLabProjects`;
-      document.getElementById('projectMeta').textContent = `${project.domain}${project.subdomain ? ' | ' + project.subdomain : ''} • ${project.tech} • ${project.difficulty}`;
-      document.getElementById('projectDesc').textContent = (project.description || '') + " Ideal for final year students looking for complete AI project with code and documentation, semester project mentorship, and end-to-end guidance.";
-      document.getElementById('pdDomain').textContent = project.domain;
-      document.getElementById('pdDifficulty').textContent = project.difficulty || '';
-      document.getElementById('pdTech').textContent = project.tech || '';
+    // populate main project details
+    document.getElementById('projectImage').src = project.image || 'https://via.placeholder.com/800x420?text=Project';
+    document.getElementById('projectImage').loading = "lazy";
+    document.getElementById('projectTitle').textContent = project.title;
+    document.title = `${project.title} - Project Guidance & Mentorship | SmartLabProjects`;
+    document.getElementById('projectMeta').textContent = `${project.domain}${project.subdomain ? ' | ' + project.subdomain : ''} • ${project.tech} • ${project.difficulty}`;
+    document.getElementById('projectDesc').textContent = (project.description || '') + " Ideal for final year students looking for complete AI project with code and documentation, semester project mentorship, and end-to-end guidance.";
+    document.getElementById('pdDomain').textContent = project.domain;
+    document.getElementById('pdDifficulty').textContent = project.difficulty || '';
+    document.getElementById('pdTech').textContent = project.tech || '';
 
-      // Inject Schema.org JSON-LD
-      const schemaScript = document.createElement('script');
-      schemaScript.type = 'application/ld+json';
-      const schemaData = {
-        "@context": "https://schema.org/",
-        "@type": "Product",
-        "name": project.title + " - Project Guidance & Mentorship",
-        "image": project.image || "https://www.smartlabprojects.com/logo.png",
-        "description": "Expert guidance, code explanation, and documentation mentorship for " + project.title + ". Ideal for university students.",
-        "brand": {
-          "@type": "Brand",
+    // Inject Schema.org JSON-LD
+    const schemaScript = document.createElement('script');
+    schemaScript.type = 'application/ld+json';
+    const schemaData = {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": project.title + " - Project Guidance & Mentorship",
+      "image": project.image || "https://www.smartlabprojects.com/logo.png",
+      "description": "Expert guidance, code explanation, and documentation mentorship for " + project.title + ". Ideal for university students.",
+      "brand": {
+        "@type": "Brand",
+        "name": "SmartLabProjects"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": window.location.href,
+        "priceCurrency": "INR",
+        "price": "2500",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
           "name": "SmartLabProjects"
-        },
-        "offers": {
-          "@type": "Offer",
-          "url": window.location.href,
-          "priceCurrency": "INR",
-          "price": "2500",
-          "availability": "https://schema.org/InStock",
-          "seller": {
-            "@type": "Organization",
-            "name": "SmartLabProjects"
-          }
         }
-      };
-      // We'll update price dynamically if available
-      fetch('./prices.json').then(r => r.json()).then(prices => {
-        const price = prices[project.difficulty] ? `₹${prices[project.difficulty]}` : 'Contact for Price';
-        document.getElementById('pdPrice').textContent = price;
-        if (prices[project.difficulty]) {
-          schemaData.offers.price = prices[project.difficulty].replace(/,/g, '');
-        }
-        schemaScript.text = JSON.stringify(schemaData);
-        document.head.appendChild(schemaScript);
-      }).catch(() => {
-        document.getElementById('pdPrice').textContent = 'Contact for Price';
-        schemaScript.text = JSON.stringify(schemaData);
-        document.head.appendChild(schemaScript);
-      });
+      }
+    };
+    // We'll update price dynamically if available
+    fetch('./prices.json').then(r => r.json()).then(prices => {
+      const price = prices[project.difficulty] ? `₹${prices[project.difficulty]}` : 'Contact for Price';
+      document.getElementById('pdPrice').textContent = price;
+      if (prices[project.difficulty]) {
+        schemaData.offers.price = prices[project.difficulty].replace(/,/g, '');
+      }
+      schemaScript.text = JSON.stringify(schemaData);
+      document.head.appendChild(schemaScript);
+    }).catch(() => {
+      document.getElementById('pdPrice').textContent = 'Contact for Price';
+      schemaScript.text = JSON.stringify(schemaData);
+      document.head.appendChild(schemaScript);
+    });
 
-      // Populate domain and project type selects dynamically
-      const domainSelect = document.getElementById('domain');
-      const projectTypeSelect = document.getElementById('project_type');
+    // Populate domain and project type selects dynamically
+    const domainSelect = document.getElementById('domain');
+    const projectTypeSelect = document.getElementById('project_type');
 
-      function populateDomainOptions() {
-        if (!domainSelect) return;
-        const unique = Array.from(new Set(projects.map(p => p.domain)));
-        domainSelect.innerHTML = '<option value="">Select domain</option>' + unique.map(d => `<option value="${d}">${d}</option>`).join('') + '<option value="Other">Other (Custom domain)</option>';
-        // set current domain if available
-        domainSelect.value = project.domain || '';
-        // hide project type select if domain is Other
-        const projectTypeGroup = document.getElementById('projectTypeGroup');
-        if (projectTypeGroup) projectTypeGroup.style.display = (domainSelect.value === 'Other') ? 'none' : 'block';
-        populateProjectOptions(project.domain);
-        // show/hide custom domain field initially
+    function populateDomainOptions() {
+      if (!domainSelect) return;
+      const unique = Array.from(new Set(projects.map(p => p.domain)));
+      domainSelect.innerHTML = '<option value="">Select domain</option>' + unique.map(d => `<option value="${d}">${d}</option>`).join('') + '<option value="Other">Other (Custom domain)</option>';
+      // set current domain if available
+      domainSelect.value = project.domain || '';
+      // hide project type select if domain is Other
+      const projectTypeGroup = document.getElementById('projectTypeGroup');
+      if (projectTypeGroup) projectTypeGroup.style.display = (domainSelect.value === 'Other') ? 'none' : 'block';
+      populateProjectOptions(project.domain);
+      // show/hide custom domain field initially
+      const customGroup = document.getElementById('customDomainGroupDetails');
+      if (domainSelect.value === 'Other') {
+        if (customGroup) customGroup.style.display = 'block';
+      } else {
+        if (customGroup) customGroup.style.display = 'none';
+      }
+    }
+
+    function populateProjectOptions(domain) {
+      if (!projectTypeSelect) return;
+      // if domain is 'Other' we don't populate project types
+      if (!domain || domain === 'Other') {
+        projectTypeSelect.innerHTML = '<option value="">Select project</option>';
+        return;
+      }
+      const filtered = projects.filter(p => p.domain === domain);
+      projectTypeSelect.innerHTML = '<option value="">Select project</option>' + filtered.map(p => `<option value="${p.title}">${p.title}</option>`).join('');
+      // set to current project title when domain matches
+      if (domain === project.domain) projectTypeSelect.value = project.title;
+    }
+
+    if (domainSelect) {
+      populateDomainOptions();
+      domainSelect.addEventListener('change', (e) => {
+        populateProjectOptions(e.target.value);
         const customGroup = document.getElementById('customDomainGroupDetails');
-        if (domainSelect.value === 'Other') {
-          if (customGroup) customGroup.style.display = 'block';
-        } else {
-          if (customGroup) customGroup.style.display = 'none';
-        }
-      }
+        if (e.target.value === 'Other') { if (customGroup) customGroup.style.display = 'block'; } else { if (customGroup) customGroup.style.display = 'none'; }
+      });
+    }
 
-      function populateProjectOptions(domain) {
-        if (!projectTypeSelect) return;
-        // if domain is 'Other' we don't populate project types
-        if (!domain || domain === 'Other') {
-          projectTypeSelect.innerHTML = '<option value="">Select project</option>';
-          return;
-        }
-        const filtered = projects.filter(p => p.domain === domain);
-        projectTypeSelect.innerHTML = '<option value="">Select project</option>' + filtered.map(p => `<option value="${p.title}">${p.title}</option>`).join('');
-        // set to current project title when domain matches
-        if (domain === project.domain) projectTypeSelect.value = project.title;
-      }
+    // projectTypeSelect has no 'Other' option now; no change handler needed
+    if (projectTypeSelect) {
+      // keep placeholder handler in case of future changes
+    }
 
-      if (domainSelect) {
-        populateDomainOptions();
-        domainSelect.addEventListener('change', (e) => {
-          populateProjectOptions(e.target.value);
-          const customGroup = document.getElementById('customDomainGroupDetails');
-          if (e.target.value === 'Other') { if (customGroup) customGroup.style.display = 'block'; } else { if (customGroup) customGroup.style.display = 'none'; }
-        });
-      }
-
-      // projectTypeSelect has no 'Other' option now; no change handler needed
-      if (projectTypeSelect) {
-        // keep placeholder handler in case of future changes
-      }
-
-      // related projects
-      function renderRelated() {
-        const relatedGrid = document.getElementById('relatedGrid');
-        if (!relatedGrid) return;
-        const related = projects.filter(p => p.domain === project.domain && p.title !== project.title).slice(0, 6);
-        relatedGrid.innerHTML = related.map((p, i) => `
+    // related projects
+    function renderRelated() {
+      const relatedGrid = document.getElementById('relatedGrid');
+      if (!relatedGrid) return;
+      const related = projects.filter(p => p.domain === project.domain && p.title !== project.title).slice(0, 6);
+      relatedGrid.innerHTML = related.map((p, i) => `
         <div class="related-card" data-idx="${projects.indexOf(p)}">
           <img src="${p.image || 'https://via.placeholder.com/400x200'}" alt="${p.title}">
           <div class="rc-body"><strong style="display:block;margin-bottom:6px">${p.title}</strong><small style="color:#666">${p.tech}</small></div>
         </div>
       `).join('');
-        // attach click handlers
-        relatedGrid.querySelectorAll('.related-card').forEach(card => {
-          card.addEventListener('click', () => {
-            const i = parseInt(card.dataset.idx, 10);
-            window.location.href = `project-details.html?id=${i}`;
-          });
+      // attach click handlers
+      relatedGrid.querySelectorAll('.related-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const i = parseInt(card.dataset.idx, 10);
+          window.location.href = `project-details.html?id=${i}`;
         });
-      }
+      });
+    }
 
-      renderRelated();
+    renderRelated();
 
-      // render contact details in aside (non-blocking) and bottom
-      const contactHtml = `<p><strong>Email:</strong> ${contactDetails.email}</p><p><strong>Phone:</strong> ${contactDetails.phones.join(' / ')}</p><p><strong>Address:</strong> ${contactDetails.address}</p>`;
+    // render contact details in aside (non-blocking) and bottom
+    const contactHtml = `<p><strong>Email:</strong> ${contactDetails.email}</p><p><strong>Phone:</strong> ${contactDetails.phones.join(' / ')}</p><p><strong>Address:</strong> ${contactDetails.address}</p>`;
 
-      const cd = document.getElementById('contactDetails');
-      if (cd) cd.innerHTML = contactHtml;
+    const cd = document.getElementById('contactDetails');
+    if (cd) cd.innerHTML = contactHtml;
 
-      const bcd = document.getElementById('bottomContactDetails');
-      if (bcd) bcd.innerHTML = contactHtml;
+    const bcd = document.getElementById('bottomContactDetails');
+    if (bcd) bcd.innerHTML = contactHtml;
 
-      // form handling: local success and set hidden project title
-      const inquiryForm = document.getElementById('inquiryForm');
-      const projectTitleHidden = document.getElementById('projectTitleHidden');
-      if (projectTitleHidden) projectTitleHidden.value = project.title;
-      if (inquiryForm) {
-        inquiryForm.addEventListener('submit', (e) => {
-          e.preventDefault();
-          // validate required fields
-          if (!inquiryForm.checkValidity()) { inquiryForm.reportValidity(); return; }
-          const ts = document.getElementById('timestamp');
-          if (ts) ts.value = new Date().toISOString();
-          const payload = {};
-          new FormData(inquiryForm).forEach((v, k) => { payload[k] = v; });
+    // form handling: local success and set hidden project title
+    const inquiryForm = document.getElementById('inquiryForm');
+    const projectTitleHidden = document.getElementById('projectTitleHidden');
+    if (projectTitleHidden) projectTitleHidden.value = project.title;
+    if (inquiryForm) {
+      inquiryForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // validate required fields
+        if (!inquiryForm.checkValidity()) { inquiryForm.reportValidity(); return; }
+        const ts = document.getElementById('timestamp');
+        if (ts) ts.value = new Date().toISOString();
+        const payload = {};
+        new FormData(inquiryForm).forEach((v, k) => { payload[k] = v; });
 
-          // Send to local server endpoint when running locally, else to /api/contact
-          try {
-            let endpoint = '/api/contact'; // Default for production
-            // If opening via file explorer OR running on localhost, use the local node server
-            if (window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-              endpoint = 'http://localhost:3000/send-local';
-            }
-
-            console.log('Sending to endpoint:', endpoint);
-
-            fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
-              .then(async r => {
-                const j = await r.json();
-                if (!r.ok) throw new Error(j.error || 'Server error');
-                console.log('send result', j);
-                const succ = document.getElementById('formSuccess');
-                if (succ) { succ.style.display = 'block'; succ.textContent = 'Inquiry sent successfully!'; }
-                inquiryForm.reset();
-                setTimeout(() => { if (succ) succ.style.display = 'none'; }, 5000);
-              })
-              .catch(e => {
-                console.warn('send failed', e);
-                let msg = 'Failed to send inquiry: ' + e.message;
-                if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
-                  msg += '. \n\nEnsure the local server is running (npm run start-server).';
-                }
-                alert(msg);
-              });
-          } catch (err) {
-            console.warn('Could not send inquiry', err);
-            alert('Unexpected error: ' + err.message);
+        // Send to local server endpoint when running locally, else to /api/contact
+        try {
+          let endpoint = '/api/contact'; // Default for production
+          // If opening via file explorer OR running on localhost, use the local node server
+          if (window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            endpoint = 'http://localhost:3000/send-local';
           }
-        });
-      }
-    </script>
-    <script type="module" src="./floating.js"></script>
-  </body>
+
+          console.log('Sending to endpoint:', endpoint);
+
+          fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+            .then(async r => {
+              const j = await r.json();
+              if (!r.ok) throw new Error(j.error || 'Server error');
+              console.log('send result', j);
+              const succ = document.getElementById('formSuccess');
+              if (succ) { succ.style.display = 'block'; succ.textContent = 'Inquiry sent successfully!'; }
+              inquiryForm.reset();
+              setTimeout(() => { if (succ) succ.style.display = 'none'; }, 5000);
+            })
+            .catch(e => {
+              console.warn('send failed', e);
+              let msg = 'Failed to send inquiry: ' + e.message;
+              if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:') {
+                msg += '. \n\nEnsure the local server is running (npm run start-server).';
+              }
+              alert(msg);
+            });
+        } catch (err) {
+          console.warn('Could not send inquiry', err);
+          alert('Unexpected error: ' + err.message);
+        }
+      });
+    }
+  </script>
+  <script type="module" src="./floating.js"></script>
+</body>
 
 </html>
